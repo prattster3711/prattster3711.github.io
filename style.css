@@ -11,7 +11,7 @@ body, html {
 .hero-image {
     /* - HERO -
     This code controls your "hero image." You will need to change hero.jpg to match your asset */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bluecathy.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("heroimage.jpg");
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -174,7 +174,7 @@ This code controls that cool parallax image and scrolling effect. Change the ima
 
 
 .parallax {
-    background-image: url("cats.png");
+    background-image: url("parallax.jpg");
 
     /* Set a specific height */
     height: 500px;
@@ -272,7 +272,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-   /*background-color: #04AA6D; */
+   background-color: black;
 }
 
 
