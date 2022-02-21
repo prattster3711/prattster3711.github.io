@@ -15,6 +15,7 @@ visibility: hidden
 (set: $hasGeiger to false)
 (set: $hasKey to false)
 (set: $churchCount to 0)
+(set: $seenFlowers to false)
 
 The Long Winter passed. The sky&#39;s heavy clouds finally dispersed, which means that, instead of foraging for sparse vegatation that grows with the little light that reaches the ground, the people of your village were able to set roots.
 
@@ -67,6 +68,10 @@ He describes how, long ago, before the Long Winter, Man had power beyond the lik
 
 Father Simon wants you to enter the maze. He gives you a small, yellow box.
 
+(if: $seenFlowers is true)[On your way out, you flip through one of the Church&#39;s many books on flora. The flowers you saw, it says, contain messages of danger.
+
+Doesn&#39;t everything these days. (set: $seenFlowers to false)]
+
 [[Go to the maze -&gt; mazeStart]]</tw-passagedata><tw-passagedata pid="5" name="church2" tags="" position="472,616.6666666666667" size="100,100">(set: $numMoves to it + 1)
 (set: $churchCount to it + 1)
 Today&#39;s sermon is delivered by Father Peter, and he talks about the Long Winter.
@@ -76,6 +81,10 @@ He describes how Man took advantage of God&#39;s power, to fight their wars and 
 He says that this indiscretion is why nobody should enter the maze.
 
 You don&#39;t see the connection.
+
+(if: $seenFlowers is true)[On your way out, you flip through one of the Church&#39;s many books on flora. The flowers you saw, it says, contain messages of danger.
+
+Doesn&#39;t everything these days. (set: $seenFlowers to false)]
 
 [[Go to the maze -&gt; mazeStart]]</tw-passagedata><tw-passagedata pid="6" name=" mazeStart" tags="" position="468,853" size="100,100">You approach the basin.
 (if:$dayNumber is 1)[
@@ -107,13 +116,14 @@ There is a message on the wall, reading &quot;What lies beneath thy feet is cons
 
 There is a passage pointing to the North, and two to the South. One Southward passage is further to the West, and one is further to the East. The passage to the West while take you towards the entrance to the maze.
 
-(if:$hasGeiger is true)[The box chirps faster when you point it East.]
+(if:$hasGeiger is true)[The box chirps faster when you point it North.]
 
 [[Take the Western Southern passage -&gt; end2]]
 [[Take the Eastern Southern passage -&gt; end3]]
 [[Go North -&gt; int3]]
 [[Go West -&gt; int1]]
 ]</tw-passagedata><tw-passagedata pid="9" name=" end2" tags="" position="82,1195" size="100,100">(set: $numMoves to it + 1)
+(if:visits is 0)[(set: $seenFlowers to true)]
 You arrive at a dead end.
 
 It so happens that this corner of the maze is positioned in such a way that it receives enough sun to support plant growth. From a crack in the stone beneath your feet grows a small bundle of flowers.
