@@ -70,7 +70,7 @@ Father Simon wants you to enter the maze. He gives you a small, yellow box.
 
 (if: $seenFlowers is true)[On your way out, you flip through one of the Church&#39;s many books on flora. The flowers you saw, it says, contain messages of danger.
 
-Doesn&#39;t everything these days. (set: $seenFlowers to false)]
+Doesn&#39;t everything these days.]
 
 [[Go to the maze -&gt; mazeStart]]</tw-passagedata><tw-passagedata pid="5" name="church2" tags="" position="472,616.6666666666667" size="100,100">(set: $numMoves to it + 1)
 (set: $churchCount to it + 1)
@@ -84,9 +84,10 @@ You don&#39;t see the connection.
 
 (if: $seenFlowers is true)[On your way out, you flip through one of the Church&#39;s many books on flora. The flowers you saw, it says, contain messages of danger.
 
-Doesn&#39;t everything these days. (set: $seenFlowers to false)]
+Doesn&#39;t everything these days. ]
 
-[[Go to the maze -&gt; mazeStart]]</tw-passagedata><tw-passagedata pid="6" name=" mazeStart" tags="" position="468,853" size="100,100">You approach the basin.
+[[Go to the maze -&gt; mazeStart]]</tw-passagedata><tw-passagedata pid="6" name=" mazeStart" tags="" position="468,853" size="100,100">(set: $seenFlowers to false)
+You approach the basin.
 (if:$dayNumber is 1)[
 Atop the edge, there are sharp, black rocks pointing outward, across the valley. The ground abruptly transitions from dirt and grass to smooth, unblemished gray rock. From your position, you can see a bit past the entrance of the maze. It is comprised of large stone blocks, the same type of rock as that below your feet. The blocks are at least three times the size of your cabin. They vary in size, but all stand tall and forboding.
 ]
@@ -123,7 +124,7 @@ There is a passage pointing to the North, and two to the South. One Southward pa
 [[Go North -&gt; int3]]
 [[Go West -&gt; int1]]
 ]</tw-passagedata><tw-passagedata pid="9" name=" end2" tags="" position="82,1195" size="100,100">(set: $numMoves to it + 1)
-(if:visits is 0)[(set: $seenFlowers to true)]
+(if:visits is 1)[(set: $seenFlowers to true)]
 You arrive at a dead end.
 
 It so happens that this corner of the maze is positioned in such a way that it receives enough sun to support plant growth. From a crack in the stone beneath your feet grows a small bundle of flowers.
